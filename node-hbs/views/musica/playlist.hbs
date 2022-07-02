@@ -1,0 +1,28 @@
+<h1>{{title}}</h1>
+<h1> Playlist</h1>
+    <p >
+        <div class="container">
+            {{#if musicas }}
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Cantante</th>
+                            <th>YouTube</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{# each musicas }}
+                        <tr>
+                            <td>{{ nombre }}</td>
+                            <td>{{ cantante }}</td>
+                            <td>{{ link }}</td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            {{~^~}}
+                <div>No se encontraron canciones.</div>
+            {{/if}}
+        </div>
+    </p>
