@@ -1,21 +1,28 @@
+<style type="text/css">
+.myTable { background-color:#eee;border-collapse:collapse; }
+.myTable th { background-color:#000;color:white;width:50%; }
+.myTable td, .myTable th { padding:5px;border:1px solid #000; }
+</style>
+
 <h1>{{title}}</h1>
 <h1> Playlist</h1>
     <p >
         <div class="container">
-            {{#if musicas }}
-                <table class="table table-hover">
-                    <thead>
+            {{#if data }}
+                <table class="myTable" color = "dark" >
+                    
+                    <thead class="table-dark">
                         <tr>
                             <th>Nombre</th>
-                            <th>Cantante</th>
+                            <th>Artista</th>
                             <th>YouTube</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {{# each musicas }}
+                        {{# each data }}
                         <tr>
-                            <td>{{ nombre }}</td>
-                            <td>{{ cantante }}</td>
+                            <td>{{ NombreCancion }}</td>
+                            <td>{{ Artista }}</td>
                             <td>{{ link }}</td>
                         </tr>
                         {{/each}}
@@ -26,3 +33,4 @@
             {{/if}}
         </div>
     </p>
+

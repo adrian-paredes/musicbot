@@ -8,6 +8,9 @@ var indexRouter = require('./routes/index');
 var musicaRouter = require('./routes/musicbot_user')
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
+const mysql = require('mysql');
+const myConnection = require('express-myconnection');
+
 
 
 var app = express();
@@ -16,6 +19,13 @@ mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology:true});
 mongoose.Promise = global.Promise;
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+
+app.use(myConnection(mysql,{
+  host: 'localhost',
+  user: 'root',
+  password: 'root',
+  database: 'crudnode'
+}, 'single'))
 
 
 // view engine setup
