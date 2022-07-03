@@ -34,6 +34,7 @@ musicaController.playlist = function(req, res){
     })
 };
 
+//Test1
 musicaController.playlistRockFeliz = function(req, res){
     req.getConnection((err,conn)=>{
         conn.query('SELECT * FROM musica WHERE Genero="Rock" AND Animo = "Feliz"', (err, musica)=>{
@@ -49,6 +50,8 @@ musicaController.playlistRockFeliz = function(req, res){
     })
 };
 
+
+//Test2
 musicaController.getRock = function(req, res){
    const {rock} = req.params; 
    const sql = `SELECT * FROM musica WHERE Genero = "${rock}"`
@@ -66,4 +69,88 @@ musicaController.getRock = function(req, res){
         });
     })
 };
+
+musicaController.getHappy = function(req, res){
+    const sql = `SELECT * FROM musica WHERE Animo="Feliz"`
+     req.getConnection((err,conn)=>{
+         conn.query(sql, (err, musica)=>{
+             if (err){
+                 res.json(err);
+             }
+             console.log(musica);
+             res.render('../views/musica/playlistHappy',{
+                 data: musica
+             });
+ 
+         });
+     })
+ };
+
+ musicaController.getHappyGenere = function(req, res){
+    const {gen} = req.params; 
+    //console.log(rock);
+    const sql = `SELECT * FROM musica WHERE Genero = "${gen}" AND Animo = "Feliz"`
+     req.getConnection((err,conn)=>{
+         //const { rock } = conn.params;
+         conn.query(sql, (err, musica)=>{
+             if (err){
+                 res.json(err);
+             }
+             console.log(musica);
+             
+             res.render('../views/musica/playlist',{
+                 data: musica
+             });
+ 
+         });
+     })
+ };
+
+ musicaController.getSad = function(req, res){
+    const sql = `SELECT * FROM musica WHERE Animo="Triste"`
+     req.getConnection((err,conn)=>{
+         conn.query(sql, (err, musica)=>{
+             if (err){
+                 res.json(err);
+             }
+             console.log(musica);
+             res.render('../views/musica/playlistSad',{
+                 data: musica
+             });
+ 
+         });
+     })
+ };
+
+ musicaController.getAngry = function(req, res){
+    const sql = `SELECT * FROM musica WHERE Animo="Molesto"`
+     req.getConnection((err,conn)=>{
+         conn.query(sql, (err, musica)=>{
+             if (err){
+                 res.json(err);
+             }
+             console.log(musica);
+             res.render('../views/musica/playlistAngry',{
+                 data: musica
+             });
+ 
+         });
+     })
+ };
+
+ musicaController.getSurprise = function(req, res){
+    const sql = `SELECT * FROM musica WHERE Animo="Sorprendido"`
+     req.getConnection((err,conn)=>{
+         conn.query(sql, (err, musica)=>{
+             if (err){
+                 res.json(err);
+             }
+             console.log(musica);
+             res.render('../views/musica/playlistSurprise',{
+                 data: musica
+             });
+ 
+         });
+     })
+ };
 module.exports = musicaController;
