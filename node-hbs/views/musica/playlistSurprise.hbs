@@ -20,10 +20,10 @@
                     </thead>
                     <tbody>
                         {{# each data }}
-                        <tr>
-                            <td>{{ NombreCancion }}</td>
-                            <td>{{ Artista }}</td>
-                            <td>{{ link }}</td>
+                       <tr>
+                            <td>{{ cancion_name }}</td>
+                            <td>{{ artista }}</td>
+                            <td><a href={{ link }}>Ir a YouTube</a></td>
                         </tr>
                         {{/each}}
                     </tbody>

@@ -37,7 +37,7 @@ musicaController.playlist = function(req, res){
 //Test1
 musicaController.playlistRockFeliz = function(req, res){
     req.getConnection((err,conn)=>{
-        conn.query('SELECT * FROM musica WHERE Genero="Rock" AND Animo = "Feliz"', (err, musica)=>{
+        conn.query('SELECT * FROM musica WHERE genero="Rock" AND emocion = "Feliz"', (err, musica)=>{
             if (err){
                 res.json(err);
             }
@@ -54,7 +54,7 @@ musicaController.playlistRockFeliz = function(req, res){
 //Test2
 musicaController.getRock = function(req, res){
    const {rock} = req.params; 
-   const sql = `SELECT * FROM musica WHERE Genero = "${rock}"`
+   const sql = 'SELECT * FROM musica WHERE genero = "${rock}"'
     req.getConnection((err,conn)=>{
         //const { rock } = conn.params;
         conn.query(sql, (err, musica)=>{
@@ -71,7 +71,7 @@ musicaController.getRock = function(req, res){
 };
 
 musicaController.getHappy = function(req, res){
-    const sql = `SELECT * FROM musica WHERE Animo="Feliz"`
+    const sql = 'SELECT * FROM musica WHERE emocion = "felicidad"'
      req.getConnection((err,conn)=>{
          conn.query(sql, (err, musica)=>{
              if (err){
@@ -89,7 +89,7 @@ musicaController.getHappy = function(req, res){
  musicaController.getHappyGenere = function(req, res){
     const {gen} = req.params; 
     //console.log(rock);
-    const sql = `SELECT * FROM musica WHERE Genero = "${gen}" AND Animo = "Feliz"`
+    const sql = 'SELECT * FROM musica WHERE genero = "${gen}" AND emocion = "felicidad"'
      req.getConnection((err,conn)=>{
          //const { rock } = conn.params;
          conn.query(sql, (err, musica)=>{
@@ -107,7 +107,7 @@ musicaController.getHappy = function(req, res){
  };
 
  musicaController.getSad = function(req, res){
-    const sql = `SELECT * FROM musica WHERE Animo="Triste"`
+    const sql = 'SELECT * FROM musica WHERE emocion="tristeza"'
      req.getConnection((err,conn)=>{
          conn.query(sql, (err, musica)=>{
              if (err){
@@ -123,7 +123,7 @@ musicaController.getHappy = function(req, res){
  };
 
  musicaController.getAngry = function(req, res){
-    const sql = `SELECT * FROM musica WHERE Animo="Molesto"`
+    const sql = 'SELECT * FROM musica WHERE Animo="enojo"'
      req.getConnection((err,conn)=>{
          conn.query(sql, (err, musica)=>{
              if (err){
@@ -139,7 +139,7 @@ musicaController.getHappy = function(req, res){
  };
 
  musicaController.getSurprise = function(req, res){
-    const sql = `SELECT * FROM musica WHERE Animo="Sorprendido"`
+    const sql = 'SELECT * FROM musica WHERE Animo="sorpresa"'
      req.getConnection((err,conn)=>{
          conn.query(sql, (err, musica)=>{
              if (err){
