@@ -2,7 +2,145 @@
 .myTable { background-color:#eee;border-collapse:collapse; }
 .myTable th { background-color:#000;color:white;width:50%; }
 .myTable td, .myTable th { padding:5px;border:1px solid #000; }
-</style>
+
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 20.00%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.mybuttoncontainer {
+    left: 200px;
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+  }
+  .mybuttoncontainer img {
+    padding: 16px 30px;
+    width:  80%;
+    height: 80%;
+    height: auto;
+  }
+  
+  .mybuttoncontainer .btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #f1f1f1;
+    color: black;
+    font-size: 16px;
+    padding: 16px 30px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  .mybuttoncontainer .btn:hover {
+    background-color: black;
+    color: white;
+  }
+  .mybuttoncontainer2 {
+    left: 200px;
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+  }
+  .mybuttoncontainer2 img {
+    padding: 16px 40px;
+    width:  200px;
+    height: 200px;
+    
+    height: auto;
+  }
+  
+  .mybuttoncontainer2 .btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #f1f1f1;
+    color: black;
+    font-size: 16px;
+    padding: 16px 30px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  .mybuttoncontainer2 .btn:hover {
+    background-color: black;
+    color: white;
+  }
+
+  </style>
+
+
+  
+  <div class = "row ">
+    <div class= "column">
+      <div class="mybuttoncontainer">
+        <img src="https://i.pinimg.com/736x/40/72/c5/4072c5ddc847ea512038b4bc6f37fed6.jpg" alt="Snow" >
+        <a href="/musicbot/playlistAngry/rock"> 
+        <button class="btn" >Rock</button>
+      </a>
+      </div>
+    </div>
+
+    <div class = "column">
+        <div class="mybuttoncontainer">
+    <img src="https://media.gettyimages.com/vectors/jazz-musical-instrument-icons-vector-id1211359508?s=612x612" alt="Snow" height="60%">
+    <a href="/musicbot/playlistAngry/pop"> 
+     <button class="btn" >Pop</button>
+      </a>
+      </div>
+    </div>
+
+        <div class = "column">
+        <div class="mybuttoncontainer">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqReqLVyV3twBzlmE2dGIGZzbJZOhSkOslgg&usqp=CAU" alt="Mountains" >
+    <a href="/musicbot/playlistAngry/salsa"> 
+     <button class="btn" >Salsa</button>
+      </a>
+      </div>
+    </div>
+
+    
+  </div>
+
+    <div class = "row ">
+    <div class= "column">
+      <div class="mybuttoncontainer">
+        <img src="https://t2.up.ltmcdn.com/es/posts/5/3/6/instrumentos_de_la_musica_clasica_3635_orig.jpg" alt="Snow" >
+        <a href="/musicbot/playlistAngry/clasica"> 
+        <button class="btn" >Clásica</button>
+      </a>
+      </div>
+    </div>
+
+    <div class = "column">
+        <div class="mybuttoncontainer">
+    <img src="https://static.elcorreo.com/www/multimedia/201905/30/media/cortadas/notas-U70926235217hw-U80402286587YrB-624x385@El%20Correo-ElCorreo.jpg" alt="Snow" >
+    <a href="/musicbot/playlistAngry/otros"> 
+     <button class="btn" >Otros</button>
+      </a>
+      </div>
+    </div>
+  </div>
 
 <h1>{{title}}</h1>
 <h1> Playlist</h1>

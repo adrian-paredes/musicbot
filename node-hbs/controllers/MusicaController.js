@@ -4,13 +4,7 @@ var Musica = require("../models/Musica");
 var musicaController = {};
 
 musicaController.list = function(req, res){
-    
-    Musica.find({}).exec(function(err, canciones){
-        if( err ){ console.log('Error: ', err); return; }
-        console.log("The INDEX");
-        res.render('../views/musica/inicio', {canciones: canciones, titulo:'Inicio'} );
-        
-    });
+    res.render('../views/musica/inicio');
     
 };
 
@@ -123,7 +117,7 @@ musicaController.getHappy = function(req, res){
  };
 
  musicaController.getAngry = function(req, res){
-    const sql = 'SELECT * FROM musica WHERE Animo="enojo"'
+    const sql = 'SELECT * FROM musica WHERE emocion ="enojo"'
      req.getConnection((err,conn)=>{
          conn.query(sql, (err, musica)=>{
              if (err){
@@ -139,7 +133,7 @@ musicaController.getHappy = function(req, res){
  };
 
  musicaController.getSurprise = function(req, res){
-    const sql = 'SELECT * FROM musica WHERE Animo="sorpresa"'
+    const sql = 'SELECT * FROM musica WHERE emocion="sorpresa"'
      req.getConnection((err,conn)=>{
          conn.query(sql, (err, musica)=>{
              if (err){
@@ -153,4 +147,65 @@ musicaController.getHappy = function(req, res){
          });
      })
  };
+
+ musicaController.getSadGenere = function(req, res){
+    const {gen} = req.params; 
+    //console.log(rock);
+    const sql = 'SELECT * FROM musica WHERE genero = "${gen}" AND emocion = "tristeza"'
+     req.getConnection((err,conn)=>{
+         //const { rock } = conn.params;
+         conn.query(sql, (err, musica)=>{
+             if (err){
+                 res.json(err);
+             }
+             console.log(musica);
+             
+             res.render('../views/musica/playlist',{
+                 data: musica
+             });
+ 
+         });
+     })
+ };
+
+ musicaController.getSurpriseGenere = function(req, res){
+    const {gen} = req.params; 
+    //console.log(rock);
+    const sql = 'SELECT * FROM musica WHERE genero = "${gen}" AND emocion = "sorpresa"'
+     req.getConnection((err,conn)=>{
+         //const { rock } = conn.params;
+         conn.query(sql, (err, musica)=>{
+             if (err){
+                 res.json(err);
+             }
+             console.log(musica);
+             
+             res.render('../views/musica/playlist',{
+                 data: musica
+             });
+ 
+         });
+     })
+ };
+
+ musicaController.getAngryGenere = function(req, res){
+    const {gen} = req.params; 
+    //console.log(rock);
+    const sql = 'SELECT * FROM musica WHERE genero = "${gen}" AND emocion = "enojo"'
+     req.getConnection((err,conn)=>{
+         //const { rock } = conn.params;
+         conn.query(sql, (err, musica)=>{
+             if (err){
+                 res.json(err);
+             }
+             console.log(musica);
+             
+             res.render('../views/musica/playlist',{
+                 data: musica
+             });
+ 
+         });
+     })
+ };
+
 module.exports = musicaController;

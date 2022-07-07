@@ -6,6 +6,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var musicaRouter = require('./routes/musicbot_user')
+var adminRouter = require('./routes/musicbot_admin')
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 const mysql = require('mysql');
@@ -14,14 +15,6 @@ const myConnection = require('express-myconnection');
 
 
 var app = express();
-
-/*
-var mongoDB = 'mongodb://127.0.0.1:27017/L4db';
-mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology:true});
-mongoose.Promise = global.Promise;
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
-*/
 
 app.use(myConnection(mysql,{
   host: 'localhost',
@@ -42,6 +35,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/musicbot', musicaRouter);
+app.use('/Admin', adminRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
