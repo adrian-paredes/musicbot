@@ -83,7 +83,7 @@ musicaController.getHappy = function(req, res){
  musicaController.getHappyGenere = function(req, res){
     const {gen} = req.params; 
     //console.log(rock);
-    const sql = 'SELECT * FROM musica WHERE genero = "${gen}" AND emocion = "felicidad"'
+    const sql = `SELECT * FROM musica WHERE genero = "${gen}" AND emocion = "felicidad"`
      req.getConnection((err,conn)=>{
          //const { rock } = conn.params;
          conn.query(sql, (err, musica)=>{
@@ -151,8 +151,8 @@ musicaController.getHappy = function(req, res){
  musicaController.getSadGenere = function(req, res){
     const {gen} = req.params; 
     //console.log(rock);
-    const sql = 'SELECT * FROM musica WHERE genero = "${gen}" AND emocion = "tristeza"'
-     req.getConnection((err,conn)=>{
+    const sql = `SELECT * FROM musica WHERE genero = "${gen}" AND emocion = "tristeza"`
+    req.getConnection((err,conn)=>{
          //const { rock } = conn.params;
          conn.query(sql, (err, musica)=>{
              if (err){
@@ -171,7 +171,7 @@ musicaController.getHappy = function(req, res){
  musicaController.getSurpriseGenere = function(req, res){
     const {gen} = req.params; 
     //console.log(rock);
-    const sql = 'SELECT * FROM musica WHERE genero = "${gen}" AND emocion = "sorpresa"'
+    const sql = `SELECT * FROM musica WHERE genero = "${gen}" AND emocion = "sorpresa"`
      req.getConnection((err,conn)=>{
          //const { rock } = conn.params;
          conn.query(sql, (err, musica)=>{
@@ -191,13 +191,15 @@ musicaController.getHappy = function(req, res){
  musicaController.getAngryGenere = function(req, res){
     const {gen} = req.params; 
     //console.log(rock);
-    const sql = 'SELECT * FROM musica WHERE genero = "${gen}" AND emocion = "enojo"'
+    const sql = `SELECT * FROM musica WHERE genero = "${gen}" AND emocion = "enojo"`
      req.getConnection((err,conn)=>{
          //const { rock } = conn.params;
          conn.query(sql, (err, musica)=>{
              if (err){
                  res.json(err);
              }
+             //console.log("the gen is")
+             console.log(gen);
              console.log(musica);
              
              res.render('../views/musica/playlist',{

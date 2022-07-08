@@ -3,6 +3,9 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const {engine} = require('express-handlebars');
+const session = require('express-session');
+
 
 var indexRouter = require('./routes/index');
 var musicaRouter = require('./routes/musicbot_user')
@@ -19,9 +22,16 @@ var app = express();
 app.use(myConnection(mysql,{
   host: 'localhost',
   user: 'root',
-  password: '',
-  database: 'proyectoICC'
+  password: 'root',
+  database: 'crudnode'
 }, 'single'))
+
+app.use(session({
+  secret: 'secret',
+  resave: true,
+  saveUninitialized: true
+
+}));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -32,6 +42,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+const dotenv = require('dotenv');
+dotenv.config({path:'./env/.env'})
+
+
+
+
+
 
 app.use('/', indexRouter);
 app.use('/musicbot', musicaRouter);
