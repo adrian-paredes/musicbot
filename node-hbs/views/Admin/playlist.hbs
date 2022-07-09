@@ -1,0 +1,42 @@
+<style type="text/css">
+.myTable { background-color:#eee;border-collapse:collapse; }
+.myTable th { background-color:#000;color:white;width:50%; }
+.myTable td, .myTable th { padding:5px;border:1px solid #000; }
+</style>
+
+<h1>{{title}}</h1>
+<h1> Playlist</h1>
+    <p >
+        <div class="container">
+            {{#if data }}
+                <table class="myTable" color = "dark" >
+                    
+                    <thead class="table-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Artista</th>
+                            <th>YouTube</th>
+                            <th>Emocion</th>
+                            <th>Género</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{# each data }}
+                        <tr>
+                            <td><a href="/Admin/Admin/show/{{ _id }}">{{ cancion_id }}</td>
+                            <td>{{ cancion_name }}</td>
+                            <td>{{ artista }}</td>
+                            <td><a href={{ link }}>Ir a YouTube</a></td>
+                            <td>{{ emocion }}</td>
+                            <td>{{ genero }}</td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            {{~^~}}
+                <div>No se encontraron canciones.</div>
+            {{/if}}
+        </div>
+    </p>
+
