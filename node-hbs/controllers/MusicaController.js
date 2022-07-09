@@ -31,7 +31,7 @@ musicaController.playlist = function(req, res){
 //Test1
 musicaController.playlistRockFeliz = function(req, res){
     req.getConnection((err,conn)=>{
-        conn.query('SELECT * FROM musica WHERE genero="Rock" AND emocion = "Feliz"', (err, musica)=>{
+        conn.query('SELECT * FROM musica WHERE LOWER(genero)="Rock" AND LOWER(emocion) = "Feliz"', (err, musica)=>{
             if (err){
                 res.json(err);
             }
@@ -48,7 +48,7 @@ musicaController.playlistRockFeliz = function(req, res){
 //Test2
 musicaController.getRock = function(req, res){
    const {rock} = req.params; 
-   const sql = 'SELECT * FROM musica WHERE genero = "${rock}"'
+   const sql = 'SELECT * FROM musica WHERE LOWER(genero) = "${rock}"'
     req.getConnection((err,conn)=>{
         //const { rock } = conn.params;
         conn.query(sql, (err, musica)=>{
@@ -65,7 +65,7 @@ musicaController.getRock = function(req, res){
 };
 
 musicaController.getHappy = function(req, res){
-    const sql = 'SELECT * FROM musica WHERE emocion = "felicidad"'
+    const sql = 'SELECT * FROM musica WHERE LOWER(emocion) = "felicidad"'
      req.getConnection((err,conn)=>{
          conn.query(sql, (err, musica)=>{
              if (err){
@@ -83,7 +83,7 @@ musicaController.getHappy = function(req, res){
  musicaController.getHappyGenere = function(req, res){
     const {gen} = req.params; 
     //console.log(rock);
-    const sql = `SELECT * FROM musica WHERE genero = "${gen}" AND emocion = "felicidad"`
+    const sql = `SELECT * FROM musica WHERE LOWER(genero) = "${gen}" AND LOWER(emocion) = "felicidad"`
      req.getConnection((err,conn)=>{
          //const { rock } = conn.params;
          conn.query(sql, (err, musica)=>{
@@ -101,7 +101,7 @@ musicaController.getHappy = function(req, res){
  };
 
  musicaController.getSad = function(req, res){
-    const sql = 'SELECT * FROM musica WHERE emocion="tristeza"'
+    const sql = 'SELECT * FROM musica WHERE LOWER(emocion)="tristeza"'
      req.getConnection((err,conn)=>{
          conn.query(sql, (err, musica)=>{
              if (err){
@@ -117,7 +117,7 @@ musicaController.getHappy = function(req, res){
  };
 
  musicaController.getAngry = function(req, res){
-    const sql = 'SELECT * FROM musica WHERE emocion ="enojo"'
+    const sql = 'SELECT * FROM musica WHERE LOWER(emocion) ="enojo"'
      req.getConnection((err,conn)=>{
          conn.query(sql, (err, musica)=>{
              if (err){
@@ -133,7 +133,7 @@ musicaController.getHappy = function(req, res){
  };
 
  musicaController.getSurprise = function(req, res){
-    const sql = 'SELECT * FROM musica WHERE emocion="sorpresa"'
+    const sql = 'SELECT * FROM musica WHERE LOWER(emocion)="sorpresa"'
      req.getConnection((err,conn)=>{
          conn.query(sql, (err, musica)=>{
              if (err){
@@ -151,7 +151,7 @@ musicaController.getHappy = function(req, res){
  musicaController.getSadGenere = function(req, res){
     const {gen} = req.params; 
     //console.log(rock);
-    const sql = `SELECT * FROM musica WHERE genero = "${gen}" AND emocion = "tristeza"`
+    const sql = `SELECT * FROM musica WHERE LOWER(genero) = "${gen}" AND LOWER(emocion) = "tristeza"`
     req.getConnection((err,conn)=>{
          //const { rock } = conn.params;
          conn.query(sql, (err, musica)=>{
@@ -171,7 +171,7 @@ musicaController.getHappy = function(req, res){
  musicaController.getSurpriseGenere = function(req, res){
     const {gen} = req.params; 
     //console.log(rock);
-    const sql = `SELECT * FROM musica WHERE genero = "${gen}" AND emocion = "sorpresa"`
+    const sql = `SELECT * FROM musica WHERE LOWER(genero) = "${gen}" AND LOWER(emocion) = "sorpresa"`
      req.getConnection((err,conn)=>{
          //const { rock } = conn.params;
          conn.query(sql, (err, musica)=>{
@@ -191,7 +191,7 @@ musicaController.getHappy = function(req, res){
  musicaController.getAngryGenere = function(req, res){
     const {gen} = req.params; 
     //console.log(rock);
-    const sql = `SELECT * FROM musica WHERE genero = "${gen}" AND emocion = "enojo"`
+    const sql = `SELECT * FROM musica WHERE LOWER(genero) = "${gen}" AND LOWER(emocion) = "enojo"`
      req.getConnection((err,conn)=>{
          //const { rock } = conn.params;
          conn.query(sql, (err, musica)=>{

@@ -22,8 +22,8 @@ var app = express();
 app.use(myConnection(mysql,{
   host: 'localhost',
   user: 'root',
-  password: 'root',
-  database: 'crudnode'
+  password: '',
+  database: 'ProyectoICC'
 }, 'single'))
 
 app.use(session({
