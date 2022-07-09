@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <style type="text/css">
 .myTable { background-color:#eee;border-collapse:collapse; }
 .myTable th { background-color:#000;color:white;width:50%; }
@@ -6,6 +5,7 @@
 </style>
 
 <h1>{{title}}</h1>
+<a href="/Admin/Admin/index">VOLVER AL INDEX</a>
 <h1> Playlist</h1>
     <p >
         <div class="container">
@@ -20,6 +20,7 @@
                             <th>YouTube</th>
                             <th>Emocion</th>
                             <th>Género</th>
+                            <th>Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -30,7 +31,11 @@
                             <td>{{ artista }}</td>
                             <td><a href={{ link }}>Ir a YouTube</a></td>
                             <td>{{ emocion }}</td>
-                            <td>{{ genero }}</td>
+                            <td>{{ genero }}</td>       
+                            <td>
+                                <a href="/Admin/Admin/edit/{{ cancion_id }}">Update</a>
+                                <a href="/Admin/Admin/delete/{{ cancion_id }}">Delete</a>
+                                
                         </tr>
                         {{/each}}
                     </tbody>
@@ -41,47 +46,3 @@
         </div>
     </p>
 
-=======
-<style type="text/css">
-.myTable { background-color:#eee;border-collapse:collapse; }
-.myTable th { background-color:#000;color:white;width:50%; }
-.myTable td, .myTable th { padding:5px;border:1px solid #000; }
-</style>
-
-<h1>{{title}}</h1>
-<h1> Playlist</h1>
-    <p >
-        <div class="container">
-            {{#if data }}
-                <table class="myTable" color = "dark" >
-                    
-                    <thead class="table-dark">
-                        <tr>
-                            <th>ID</th>
-                            <th>Nombre</th>
-                            <th>Artista</th>
-                            <th>YouTube</th>
-                            <th>Emocion</th>
-                            <th>Género</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {{# each data }}
-                        <tr>
-                            <td><a href="/Admin/Admin/show/{{ _id }}">{{ cancion_id }}</td>
-                            <td>{{ cancion_name }}</td>
-                            <td>{{ artista }}</td>
-                            <td><a href={{ link }}>Ir a YouTube</a></td>
-                            <td>{{ emocion }}</td>
-                            <td>{{ genero }}</td>
-                        </tr>
-                        {{/each}}
-                    </tbody>
-                </table>
-            {{~^~}}
-                <div>No se encontraron canciones.</div>
-            {{/if}}
-        </div>
-    </p>
-
->>>>>>> 4cca5f9f100f6f0cfb3cad4bb0c118dc2ac6aac7

@@ -4,38 +4,42 @@
         <title>Agregar Canción</title>
     </head>
     <body>
+        {{#if data}}
         <div class="container">
             <h3><a href="/Admin/Admin/playlist">Playlist</a></h3>
-            <h1>Agregar nueva canción</h1>
-            <form action="/Admin/Admin/save" method="post">
+            <h1>Editar canción</h1>
+            <form action="/Admin/Admin/update/{{ data.cancion_id }}" method="post">
                 <table>
                     <tbody>
                         <tr>
                             <td>Nombre</td>
-                            <td><input type="text" name="cancion_name" /></td>
+                            <td><input type="text" name="cancion_name" value="{{ data.cancion_name }}" /></td>
                         </tr>
                         <tr>
                             <td>Artista</td>
-                            <td><input type="text" name="artista" /></td>
+                            <td><input type="text" name="artista" value="{{ data.artista }}" /></td>
                         </tr>
                         <tr>
                             <td>Link</td>
-                            <td><input type="text" name="link" /></td>
+                            <td><input type="text" name="link" value="{{ data.link }}"/></td>
                         </tr>
                         <tr>
                             <td>Emoción</td>
-                            <td><input type="text" name="emocion" /></td>
+                            <td><input type="text" name="emocion" value="{{ data.emocion }}" /></td>
                         </tr>
                         <tr>
                             <td>Género</td>
-                            <td><input type="text" name="genero" /></td>
+                            <td><input type="text" name="genero" value="{{ data.genero }}" /></td>
                         </tr>
                         <tr>
-                            <td colspan="2"><input type="submit" value="Grabar" /></td>
+                           <td colspan="2"><input type="submit" value="Grabar" /></td>
                         </tr>
                     </tbody>
                 </table>
             </form>
         </div>
+       {{~^~}}
+                <div>No se encontraron canciones.</div>
+            {{/if}}
     </body>
 </html>

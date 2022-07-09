@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 cancion_id,cancion_name,artista,enlace,emocion,genero
 1,Livin' On A Prayer,Bon Jovi,https://www.youtube.com/watch?v=lDK9QqIzhwk,felicidad,rock
 2,Somebody That I Used To Know,Gotye,https://www.youtube.com/watch?v=8UVNT4wvIGY,tristeza,pop
@@ -41,48 +40,4 @@ cancion_id,cancion_name,artista,enlace,emocion,genero
 39,Gangsta Paradise,Coolio,https://www.youtube.com/watch?v=U6Pm0iVvFXs,Tristeza,Otros
 40,Tu no metes cabra,Bad Bunny,https://www.youtube.com/watch?v=9NGgLhEVCUk,Enojo,Otros
 41,Si te dejas llevar,Ozuna & Juanka,https://www.youtube.com/watch?v=TqsETF0P_Dw,Alegria,Otros
-=======
-cancion_id,cancion_name,artista,enlace,emocion,genero
-1,Livin' On A Prayer,Bon Jovi,https://www.youtube.com/watch?v=lDK9QqIzhwk,felicidad,rock
-2,Somebody That I Used To Know,Gotye,https://www.youtube.com/watch?v=8UVNT4wvIGY,tristeza,pop
-3,Something In The Way,Nirvana,https://www.youtube.com/watch?v=4VxdufqB9zg,enojo,rock
-4,Duel of the Fates,John Williams,https://www.youtube.com/watch?v=D_2bluVPsb0,sorpresa,clasica
-5,A man without love,Engelbert Humperdinck,https://www.youtube.com/watch?v=HQLWSC57wsE,Tristeza,Clasica
-6,Yeah perdonen,Syko,https://youtu.be/TsRmVJhLL9s,Sorpresa,Clasica
-7,El barbero de Sevilla,Gioachino Rosalino,https://youtu.be/WIf8Zi6dZaY,Felicidad,Clasica 
-8,And the Waltz Goes on ,Andre Rieu ,https://youtu.be/M57Fi19vcSI,Felicidad ,Clasica 
-9,1812 Overture ,Tchaikovsky ,https://youtu.be/VbxgYlcNxE8,Sorpresa,Clasica
-10,If the World was ending ,JP Saxe ,https://youtu.be/1jO2wSpAoxA,Tristeza ,Pop
-11,Someone you loved ,Lewis Capaldi,https://youtu.be/zABLecsR5UE,Tristeza ,Pop
-12,Stay with me ,Sam Smith,https://youtu.be/pB-5XG-DbAA,Tristeza ,Pop
-13,The night we met ,Lord Huron,https://youtu.be/wGF7PswOENQ,Tristeza ,Pop
-14,Apocalypse ,Cigarettes after sex,https://youtu.be/PFe1JTJHNms,Tristeza ,Pop
-15,Life's Too Short,aespa,https://www.youtube.com/watch?v=z2ZjutyxmjA&ab_channel=SMTOWN,Felicidad,Pop
-16,Después de la playa,Bad bunny,https://www.youtube.com/watch?v=a5rlgE6dcBY,Felicidad,Otros
-17,For youth,BTS,https://www.youtube.com/watch?v=PCupTKYKpmE,Tristeza,Pop
-18,The bakery,Melanie Martinez,https://www.youtube.com/watch?v=ziotSaBtqGk,Sorpresa,Pop
-19,Through The Fire And Flames,DragonForce,https://youtu.be/ntG_EEfpasM,Felicidad,Rock
-20,Fury Of The Storm,DragonForce ,https://youtu.be/5i7qZxICwgQ,Felicidad,Rock
-21,More,j-Hope,https://www.youtube.com/watch?v=pKdBFeewZYE,Alegria,Hip-Hop
-22,Let Me Down Slowly,Alec Benjamin,https://www.youtube.com/watch?v=50VNCymT-Cs,Tristeza,Pop
-23,Vas a LLorar,Adrian Bello,https://www.youtube.com/watch?v=SYJh8oUeBvQ,Tristeza,Pop
-24,Semafaro,"Kid Lucilfer, Young Darhi",https://www.youtube.com/watch?v=bWHkr1Q0WlY,Enojo,Otros
-25,Panteras Negras,Ryodan,https://www.youtube.com/watch?v=PIecWNJd6Xo,Alegria,Otros
-26,Singapur,Pablo Chill-E,https://www.youtube.com/watch?v=0LFpcnb9NO8,Enojo,Otros
-27,Picadura de la cobra gay,Desconocido,https://www.youtube.com/watch?v=rF-O6Z3sk8c,Tristeza,Otros
-28,Omae wa Mou,deadman 死人,https://www.youtube.com/watch?v=k6LB6nrkoJU,Alegria,Otros
-29,F1 Theme,Brian Tyler,https://www.youtube.com/watch?v=8AYy-BcjRXg,Sorpresa,Clasica
-30,Smooth Operator,Sade,https://www.youtube.com/watch?v=4TYv2PhG89A,Alegria,Pop
-31,Si supieras,Adolescent's Orquesta,https://www.youtube.com/watch?v=FyygNsHUjPI,Tristeza,Salsa
-32,Hazme Olvidarla,Willie Gonzalez,https://www.youtube.com/watch?v=Sqb_hUBR4GE,Tristeza,Salsa
-33,The Foundations of Decay,My Chemical Romance,https://www.youtube.com/watch?v=V2kWUJkRvVs,Sorpresa,Rock
-34,In The End ,Black Veil Brides,https://www.youtube.com/watch?v=f0EQlIzPowM,Sorpresa,Rock
-35,AFI,Miss Murder,https://www.youtube.com/watch?v=jMxU2ToSunY,Enojo,Otros
-36,Interpol,Evil,https://www.youtube.com/watch?v=dkpgz3uQ58U,Tristeza,Rock
-37,Everybody Falls,Jukio Kallio & Daniel Hagstrom,https://www.youtube.com/watch?v=ys4rkcMbtjY,Alegria,Otros
-38,La vida nos odia,mafumafu,https://www.youtube.com/watch?v=gHmwfli1FBM,Tristeza,Otros
-39,Gangsta Paradise,Coolio,https://www.youtube.com/watch?v=U6Pm0iVvFXs,Tristeza,Otros
-40,Tu no metes cabra,Bad Bunny,https://www.youtube.com/watch?v=9NGgLhEVCUk,Enojo,Otros
-41,Si te dejas llevar,Ozuna & Juanka,https://www.youtube.com/watch?v=TqsETF0P_Dw,Alegria,Otros
->>>>>>> 4cca5f9f100f6f0cfb3cad4bb0c118dc2ac6aac7
 42,Mii Channel Music (Plaza) HQ,Nintendo,https://www.youtube.com/watch?v=3xny-xwQ9-k,Alegria,Clasica
